@@ -29,14 +29,15 @@ docker run -d --name jenkins \
 
 # Unlock Jenkins
 - Check the admin password:
-    - docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+    - docker exec -it --user root <container_id_or_name> /bin/bash
+    - cat /var/jenkins_home/secrets/initialAdminPassword
     - Copy that password → Open browser → http://localhost:8080 → paste it
     - Click: Install Suggested Plugins
         - Stage view
         - Maven integration
         - Github integration
 # Create Java Project in Docker 
-- docker exec -it jenkins /bin/bash
+- docker exec -it --user root <container_id_or_name> /bin/bash
 - apt update -y
 - git clone <url> ---- this is your wish I used a github for mvn build
 -	mkdir -p /var/jenkins_home/hello-java-maven/src/main/java
