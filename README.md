@@ -7,6 +7,13 @@
 - Ec2 instance (ubuntu)
 - Docker
 - Pull the Jenkins from docker hub
+# install docker 
+- sudo apt update
+- sudo apt install -y docker.io -y
+- sudo systemctl enable docker
+- sudo systemctl start docker
+- docker --version
+- docker pull jenkins/jenkins
 # Start Jenkins using Docker
 ```sh
 docker run -d --name jenkins \
